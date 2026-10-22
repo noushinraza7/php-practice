@@ -11,6 +11,7 @@
                 $uname=htmlspecialchars($_POST['username']);
                 echo "<h2>Hello, $uname!</h2>";
             }    
+# hello
         ?>
     </body>
 </html>
