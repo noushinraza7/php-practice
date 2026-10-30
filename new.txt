@@ -1,2 +1,0 @@
-this is a project i created to practice docker and github
-this is a second line
