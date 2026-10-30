@@ -44,7 +44,7 @@ pipeline{
                     docker rm -f ${CONTAINER_NAME} || true
 
                     docker run -d --name ${CONTAINER_NAME}\
-                        -p 8080:80 ${IMAGE_NAME}:${BUILD_NUMBER}
+                        -p 8081:80 ${IMAGE_NAME}:${BUILD_NUMBER}
 
                     docker ps 
                 '''
