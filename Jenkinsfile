@@ -24,7 +24,7 @@ pipeline{
                     credentialsId: 'dockerhub',
                     usernameVariable: 'DOCKERHUB_USER',
                     passwordVariable: 'DOCKERHUB_PASSWORD'
-                )])
+                )]){
 
                 sh'''
                     echo "$DOCKERHUB_PASSWORD" | docker login \
@@ -34,8 +34,10 @@ pipeline{
 
                     docker logout
                 '''
+                }
             }
         }
+
         stage("deploy"){
             steps{
                 sh'''
