@@ -14,7 +14,7 @@ pipeline{
         stage("build"){
             steps{
                 sh'''
-                    docker build -t ${IMAGE_NAME}:${BUILD_NUMBER}
+                    docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} .
                 '''
             }
         }
