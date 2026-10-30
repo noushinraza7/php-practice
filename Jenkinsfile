@@ -7,8 +7,8 @@ pipeline{
     stages{
         stage("checkout"){
             steps{
-                git branch: 'main'
-                    url: 'https://github.com/noushinraza7/php-practice.git'
+                git branch: 'main',
+                    url:'https://github.com/noushinraza7/php-practice.git'
             }
         }
         stage("build"){
