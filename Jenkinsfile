@@ -8,7 +8,7 @@ pipeline{
         stage("checkout"){
             steps{
                 git branch: 'main'
-                url: 'https://github.com/noushinraza7/php-practice.git'
+                    url: 'https://github.com/noushinraza7/php-practice.git'
             }
         }
         stage("build"){
@@ -23,7 +23,7 @@ pipeline{
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub'
                     usernameVariable: 'DOCKERHUB_USER'
-                    passwordVariable: 'DOCKERHUB_PASSword'
+                    passwordVariable: 'DOCKERHUB_PASSWORD'
                 )])
 
                 sh'''
@@ -39,7 +39,7 @@ pipeline{
         stage("deploy"){
             steps{
                 sh'''
-                    docker rm -f ${CONTAINER_NAME} || True
+                    docker rm -f ${CONTAINER_NAME} || true
 
                     docker run -d --name ${CONTAINER_NAME}\
                         -p 8080:80 ${IMAGE_NAME}:${BUILD_NUMBER}
